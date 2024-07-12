@@ -11,6 +11,7 @@ class test03 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Home(),
     );
   }
@@ -25,12 +26,12 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   List<String> friendList = [
-    'Dragon',
-    'Immortal',
-    'Heavenly Demon',
-    'Alliance Leader',
-    'Martial King',
-    'Angels'
+    'assets/images/a-girl.jpg',
+    'assets/images/above-the-mountains.png',
+    'assets/images/anime-brothers.jpg',
+    'assets/images/anime-coffee-girl.jpg',
+    'assets/images/another-anime-girl.jpg',
+    'assets/images/arch-girl.png'
   ];
 
   @override
@@ -43,9 +44,8 @@ class _HomeState extends State<Home> {
       body: ListView.separated(
         itemCount: friendList.length,
         itemBuilder: (context, index) {
-          return Text(
-            friendList[index],
-            textAlign: TextAlign.center,
+          return Card(
+           child: Image.asset(friendList[index]),
           );
         },
         separatorBuilder: (context, index) {
@@ -56,6 +56,7 @@ class _HomeState extends State<Home> {
         },
 
       ),
+
       // body: GridView.builder(
       //     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
       //         crossAxisCount: 3,
@@ -73,6 +74,7 @@ class _HomeState extends State<Home> {
       //       );
       //     }
       //     ),
+
     );
   }
 }
