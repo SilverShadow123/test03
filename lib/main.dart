@@ -41,36 +41,7 @@ class _HomeState extends State<Home> {
         title: Text('Test 03'),
         backgroundColor: Colors.blue,
       ),
-      // body:
-      // ListView.separated(
-      //   itemCount: friendList.length,
-      //   itemBuilder: (context, index) {
-      //     return Card(
-      //      child: Image.asset(friendList[index]),
-      //     );
-      //   },
-      //   separatorBuilder: (context, index) {
-      //     return Divider(
-      //       height: 25,
-      //       color: Colors.blueAccent,
-      //     );
-      //   },
-      //
-      // ),
 
-      // body: GridView.builder(
-      //     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-      //         crossAxisCount: 3,
-      //         crossAxisSpacing: 10,
-      //         mainAxisSpacing: 10,
-      //     ),
-      //     itemCount: friendList.length,
-      //     itemBuilder: (context, index) {
-      //       return Card(
-      //         child: Image.asset(friendList[index]),
-      //       );
-      //     }
-      //     ),
       body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
