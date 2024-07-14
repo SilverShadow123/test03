@@ -41,7 +41,6 @@ class _HomeState extends State<Home> {
         title: Text('Test 03'),
         backgroundColor: Colors.blue,
       ),
-
       body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -57,32 +56,57 @@ class _HomeState extends State<Home> {
                 margin: EdgeInsets.all(30),
                 alignment: Alignment.bottomRight,
                 decoration: BoxDecoration(
-                  border: Border.all(color: Colors.yellow, width: 5),
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(16),
-                    bottomRight: Radius.circular(16),
-                  ),
-                  image: DecorationImage(
-                      image: AssetImage('assets/images/a-girl.jpg'),
-                      fit: BoxFit.cover),
-                  boxShadow: <BoxShadow>[
-                    BoxShadow(
-                      color: Colors.red.withOpacity(0.5),
-                      spreadRadius: 4,
-                      blurRadius: 4,
-                      offset: Offset(0, 15)
-                    )
-                  ]
-                ),
+                    border: Border.all(color: Colors.yellow, width: 5),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(16),
+                      bottomRight: Radius.circular(16),
+                    ),
+                    image: DecorationImage(
+                        image: AssetImage('assets/images/a-girl.jpg'),
+                        fit: BoxFit.cover),
+                    boxShadow: <BoxShadow>[
+                      BoxShadow(
+                          color: Colors.red.withOpacity(0.5),
+                          spreadRadius: 4,
+                          blurRadius: 4,
+                          offset: Offset(0, 15))
+                    ]),
                 child: Text('Dragon'),
               ),
             ),
-
-            ElevatedButton(onPressed: (){
-              // showAboutDialog(context: context,applicationName: 'Sample', c;hildren: [Text('data')]);
-              showAboutDialog(context: context, );
-            }, child: Text('Dragon')),
-
+            ElevatedButton(
+                onPressed: () {
+                  // showAboutDialog(context: context,applicationName: 'Sample', children: [Text('data')]);
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          title: Text('dungeon'),
+                          content: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text('asdf'),
+                              Text('asdf'),
+                              Text('asdf'),
+                              Text('asdf'),
+                            ],
+                          ),
+                          actions: [
+                            TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: Text('Cancel')),
+                            TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: Text('OK')),
+                          ],
+                        );
+                      });
+                },
+                child: Text('Dragon')),
             Container(
               width: 100,
               height: 100,
